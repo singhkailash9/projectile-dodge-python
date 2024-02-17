@@ -1,8 +1,7 @@
-import pygame
+import pygame, random, sys
 from game_over import show_game_over_screen
-import random
-import sys
 from projectile import Projectile
+from score import Score
 
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 690
@@ -20,7 +19,8 @@ class Game:
         self.projectiles = []
 
         self.score = 0
-        self.high_score = 0
+        self.score_manager = Score()
+        self.high_score = self.score_manager.high_score
 
         self.game_over = False
 
@@ -32,9 +32,10 @@ class Game:
 
     def game_over_screen(self):
         self.game_over = True
-        if self.score > self.high_score:
-            self.high_score = self.score
-        show_game_over_screen(self.screen, pygame, self.score, self.high_score)
+        self.score_manager.save_score(self.score)
+        # update high_score again to display changes without breaking main loop in run_game
+        self.high_score = self.score_manager.high_score
+        show_game_over_screen(self.screen, pygame, self.score, self.high_score) 
 
     def run_game(self):
         while self.running:
