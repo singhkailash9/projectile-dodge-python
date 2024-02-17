@@ -1,5 +1,4 @@
 import pygame, random, sys
-from game_over import show_game_over_screen
 from projectile import Projectile
 from score import Score
 
@@ -35,7 +34,25 @@ class Game:
         self.score_manager.save_score(self.score)
         # update high_score again to display changes without breaking main loop in run_game
         self.high_score = self.score_manager.high_score
-        show_game_over_screen(self.screen, pygame, self.score, self.high_score) 
+
+        self.screen.fill("black")
+        font = pygame.font.Font(None, 72)
+        game_over_text = font.render("Game Over", True, (255, 0, 0))
+        self.screen.blit(game_over_text, (450, 300))
+
+        font = pygame.font.Font(None, 36)
+        final_score_text = font.render(f"Final Score: {self.score}", True, (255, 255, 255))
+        self.screen.blit(final_score_text, (500, 400))
+
+        high_score_text = font.render(f"High Score: {self.high_score}", True, (255, 255, 255))
+        self.screen.blit(high_score_text, (500, 450))
+
+        retry_text = font.render("Press R to Retry", True, (255, 255, 255))
+        self.screen.blit(retry_text, (500, 500))
+
+        exit_text = font.render("Press Esc to Exit", True, (255, 255, 255))
+        self.screen.blit(exit_text, (500, 550))
+        pygame.display.flip()
 
     def run_game(self):
         while self.running:
