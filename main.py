@@ -1,9 +1,9 @@
 import pygame, random, sys
-from game import Game
-from player import Player
-from projectile import Projectile
-from score import Score
-from screen import Screen
+from src.game import Game
+from src.player import Player
+from src.projectile import Projectile
+from src.score import Score
+from src.screen import Screen
 
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 690

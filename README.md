@@ -1,7 +1,7 @@
 # Projectile Dodge - Python
 A mini game of dodging projectiles using Python.
 
-This is a simple game created using Pygame, a popular Python library for game development. The game involves a player-controlled rectangle avoiding falling projectiles while attempting to achieve a high score.
+This is a simple game created using Pygame, a popular Python library for game development. The game involves a player which can be controlled in order to avoid falling projectiles while attempting to achieve a high score.
 
 ## How to Play
 
@@ -14,12 +14,20 @@ This is a simple game created using Pygame, a popular Python library for game de
 
 ## Features
 
+- Enhanced visuals with custom sprites for the player and projectiles.
 - Dynamic player movement in response to keyboard input.
 - Falling projectiles generated at random x-coordinates.
 - Collision detection between the player and projectiles.
 - Saving and displaying `score` from previous games.
 - Game over screen displaying the `final score` and `high score`.
 - Retry and exit options on the game over screen.
+
+## Screenshots
+
+Here are some screenshots of the game:
+
+![Gameplay Screenshot](assets/screenshots/gameplay.png "Gameplay of Projectile Dodge")
+![High Score Screenshot](assets/screenshots/highscore.png "High Score Screen")
 
 ## Dependencies
 
@@ -41,7 +49,7 @@ cd projectile-dodge-python
 
 3. Install the required dependencies. Make sure you have Python and Pip installed.
 
-Refer to [dependencies](https://github.com/singhkailash9/projectile-dodge-python?tab=readme-ov-file#dependencies)
+    [dependencies](https://github.com/singhkailash9/projectile-dodge-python?tab=readme-ov-file#dependencies)
 
 4. Run the game:
 ```
